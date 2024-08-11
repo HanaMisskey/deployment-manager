@@ -1,8 +1,13 @@
-# 0key.dev
+# Deployment-Manager
 
-misskey-dev staging environment
+Fork from hanamisskey/deployment-manager  
+This repository contains the source code for Hariko (張り子), a GitHub Actions-based CI/CD tool for Misskey.
 
-This repository also contains the source code for Hariko (張り子), a GitHub Actions-based CI/CD tool for Misskey.
+## Acknowledgments
+
+This is in appreciation of all the contributors and developers who worked on the original[misskey-dev/0key.dev](https://github.com/misskey-dev/0key.dev) project.   
+The hard work and dedication of all contributors have been invaluable in the creation of this project.
+
 
 ## How to install Hariko for your Misskey server
 
@@ -30,9 +35,9 @@ EOF
 5. Deploy Hariko to your cluster
 
 ```bash
-helm repo add misskey-dev https://misskey-dev.github.io/0key.dev
+helm repo add hanamisskey https://hanamisskey.github.io/deployment-manager
 helm update
-helm install hariko misskey-dev/hariko
+helm install hariko hanamisskey/hariko
 ```
 
 ## How to update Misskey with Hariko
@@ -41,7 +46,7 @@ helm install hariko misskey-dev/hariko
 2. Update misskey submodule to the commit you want to update to
 3. Commit and push the changes
 
-[GitHub Actions Workflow](https://github.com/misskey-dev/0key.dev/actions/workflows/build.yml) is also available.
+[GitHub Actions Workflow](https://github.com/hanamisskey/deployment-manager/actions/workflows/build.yml) is also available.
 
 > [!IMPORTANT]
 > Care should be taken to ensure that database migration is a forward-compatible change. If it is not forward compatible, you will need to stop the service before updating.
