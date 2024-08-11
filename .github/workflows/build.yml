@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       head:
-        default: develop
+        default: hanami
 
 jobs:
   update:
