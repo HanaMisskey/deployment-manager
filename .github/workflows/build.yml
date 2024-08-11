@@ -16,6 +16,8 @@ on:
 
 jobs:
   update:
+    permissions:
+      contents: write
     if: github.repository == 'HanaMisskey/deployment-manager'
     runs-on: ubuntu-latest
     steps:
