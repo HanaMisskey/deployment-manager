@@ -81,6 +81,15 @@ func newCmd() *cobra.Command {
 				case github.WorkflowJobPayload:
 					if payload.Repository.FullName != githubRepository {
 						cmd.PrintErrf("repository expected: %s, got: %s\n", githubRepository, payload.Repository.FullName)
+						st := discord(&discordgo.WebhookParams{
+							Embeds: []*discordgo.MessageEmbed{
+								{
+									Title:       "Configuration Error",
+									Color:       ColorFailure,
+									Description: fmt.Sprintf("Expected repository: %s, but got: %s", githubRepository, payload.Repository.FullName),
+								},
+							},
+						}, nil)
 						return
 					}
 					if payload.WorkflowJob.Name != githubJobName {
