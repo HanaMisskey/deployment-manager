@@ -28,7 +28,7 @@ func newCmd() *cobra.Command {
 	var repositoryURL string
 	var rootCmd = &cobra.Command{
 		Use:   "hariko",
-		Short: "CD bot for 0key.dev",
+		Short: "CD bot for misskey.flowers",
 		Long:  "Hariko watches the GitHub repository and automatically deploys the application to the server.",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
