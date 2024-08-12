@@ -1,11 +1,11 @@
 # Deployment-Manager
 
-Fork from hanamisskey/deployment-manager  
+Fork from hanamisskey/deployment-manager
 This repository contains the source code for Hariko (張り子), a GitHub Actions-based CI/CD tool for Misskey.
 
 ## Acknowledgments
 
-This is in appreciation of all the contributors and developers who worked on the original[misskey-dev/0key.dev](https://github.com/misskey-dev/0key.dev) project.   
+This is in appreciation of all the contributors and developers who worked on the original[misskey-dev/0key.dev](https://github.com/misskey-dev/0key.dev) project.
 The hard work and dedication of all contributors have been invaluable in the creation of this project.
 
 
@@ -36,7 +36,7 @@ EOF
 
 ```bash
 helm repo add hanamisskey https://hanamisskey.github.io/deployment-manager
-helm update
+helm repo update
 helm install hariko hanamisskey/hariko
 ```
 
