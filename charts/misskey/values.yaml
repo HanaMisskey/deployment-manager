@@ -1,21 +1,33 @@
 image:
   pullPolicy: IfNotPresent
-host: 0key.dev
+host: misskey.flowers
 port: 3000
 environment: production
 postgresql:
-  host: postgresql-ha-pgpool
+  host: production-misskey-pg-rw.default.svc.cluster.local
   port: 5432
-  username: postgres
+  username:
+    valueFrom:
+      secretKeyRef:
+        name: postgres-production-user-secret
+        key: username
+  password:
+    valueFrom:
+      secretKeyRef:
+        name: postgres-production-user-secret
+        key: password
+  db: hm1
 redis:
-  host: redis-ha-haproxy
+  host: dragonfly-misskey.default.svc.cluster.local
   port: 6379
-  family: 0
+  password:
+    valueFrom:
+      secretKeyRef:
+        name: dragonfly-auth
+        key: password
 misskey:
   id: aidx
-  sentryForBackend:
-    enableNodeProfiling: true
   proxyBypassHosts:
     - challenges.cloudflare.com
-  proxyRemoteFiles: true
+  proxyRemoteFiles: false
   signToActivityPubGet: true
