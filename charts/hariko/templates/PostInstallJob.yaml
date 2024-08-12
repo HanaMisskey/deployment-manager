@@ -23,7 +23,7 @@ spec:
               export HELM_DRIVER=configmap
               apk add --no-cache bash curl openssl
               curl -LSfs https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-              helm repo add misskey-dev https://misskey-dev.github.io/0key.dev/
+              helm repo add hanamisskey https://hanamisskey.github.io/deployment-manager/
               helm repo update
               helm install -n misskey misskey misskey-dev/misskey
           volumeMounts:

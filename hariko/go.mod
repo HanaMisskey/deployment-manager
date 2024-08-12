@@ -1,4 +1,4 @@
-module 0key.dev/hariko
+module deployment-manager/hariko
 
 go 1.22.3
 

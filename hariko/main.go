@@ -1,6 +1,6 @@
 package main
 
-import "0key.dev/hariko/cmd"
+import "deployment-manager/hariko/cmd"
 
 func main() {
 	cmd.Execute()
