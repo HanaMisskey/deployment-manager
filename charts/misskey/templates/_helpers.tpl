@@ -12,7 +12,7 @@ misskey-{{- default .Values.host | replace "." "-" -}}
     - name: POSTGRESQL_PASS
       valueFrom:
         secretKeyRef:
-          name: postgresql-ha-postgresql
+          name: postgres-production-user-secret
           key: password
   volumeMounts:
     - name: {{ include "misskey.name" . }}-configuration-destination
