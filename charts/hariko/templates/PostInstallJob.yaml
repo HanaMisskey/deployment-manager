@@ -25,7 +25,7 @@ spec:
               curl -LSfs https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
               helm repo add hanamisskey https://hanamisskey.github.io/deployment-manager/
               helm repo update
-              helm install -n misskey misskey misskey-dev/misskey
+              helm install -n misskey misskey hanamisskey/misskey
           volumeMounts:
             - name: {{ include "hariko.name" . }}-pvc
               mountPath: /root
