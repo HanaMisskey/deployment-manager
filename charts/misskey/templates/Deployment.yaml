@@ -44,6 +44,13 @@ spec:
               port: {{ .Values.port }}
             failureThreshold: 30
             periodSeconds: 1
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "2000m"
       volumes: {{ include "misskey.volumes" . | nindent 8 }}
   strategy:
     type: RollingUpdate
