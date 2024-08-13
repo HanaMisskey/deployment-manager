@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"bytes"
-	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -82,7 +81,7 @@ func newCmd() *cobra.Command {
 				case github.WorkflowJobPayload:
 					if payload.Repository.FullName != githubRepository {
 						cmd.PrintErrf("repository expected: %s, got: %s\n", githubRepository, payload.Repository.FullName)
-						discord(&discordgo.WebhookParams{
+						st := discord(&discordgo.WebhookParams{
 							Embeds: []*discordgo.MessageEmbed{
 								{
 									Title:       "Configuration Error",
