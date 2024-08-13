@@ -109,7 +109,7 @@ jobs:
         git fetch origin $head
         git checkout FETCH_HEAD
         brew install jaq
-        jaq --in-place ".version |= (. + \".$(git rev-parse --short HEAD)\")" package.json
+        jaq --in-place '.version |= (. + "-hanami.$(git rev-parse --short HEAD)")' package.json
         docker build -t "${{ secrets.DOCKERHUB_USERNAME }}/deployment-manager:$GITHUB_REF_NAME-misskey" .
         docker push "${{ secrets.DOCKERHUB_USERNAME }}/deployment-manager:$GITHUB_REF_NAME-misskey"
         echo "digest=$(docker image ls --format '{{.Digest}}' | head -n1)" > $GITHUB_OUTPUT
