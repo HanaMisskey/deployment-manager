@@ -12,7 +12,7 @@ misskey-{{- default .Values.host | replace "." "-" -}}
     "cp /mnt/misskey-configuration/default.yml /misskey/.config && \
     /usr/bin/yq -i \".db.user = \\\"$POSTGRESQL_USER\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".db.pass = \\\"$POSTGRESQL_PASS\\\"\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i \".redis.pass = \\\"$REDIS_PASS\\\"\" /misskey/.config/default.yml" && \
+    /usr/bin/yq -i \".redis.pass = \\\"$REDIS_PASS\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".bskSystemWebhookSecret = \\\"$BSK_SECRET\\\"\" /misskey/.config/default.yml"
   ]
   env:
