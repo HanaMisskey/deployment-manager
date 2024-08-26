@@ -22,6 +22,6 @@ data:
       family: {{ .Values.redis.family }}
       pass: {{ .Values.redis.password }}
       prefix: {{ .Values.host }}
-    bskHost: {{ .Values.misskey.bskHost }}
-    bskSystemWebhookSecret: {{ .Values.misskey.bskSystemWebhookSecret }}
+    bskHost: {{ .Values.migarion.bskHost }}
+    bskSystemWebhookSecret: {{ .Values.migration.bskSystemWebhookSecret }}
 

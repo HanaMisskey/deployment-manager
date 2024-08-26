@@ -25,11 +25,12 @@ redis:
       secretKeyRef:
         name: dragonfly-auth
         key: password
+migration:
+  bskHost: misskey.backspace.fm
+  bskSystemWebhookSecret: hoge
 misskey:
   id: aidx
   proxyBypassHosts:
     - challenges.cloudflare.com
   proxyRemoteFiles: false
   signToActivityPubGet: true
-  bskHost: misskey.backspace.fm
-  bskSystemWebhookSecret: hoge
