@@ -31,6 +31,5 @@ misskey:
     - challenges.cloudflare.com
   proxyRemoteFiles: false
   signToActivityPubGet: true
-
-bskHost: misskey.backspace.fm
-bskSystemWebhookSecret: hoge
+  bskHost: misskey.backspace.fm
+  bskSystemWebhookSecret: hoge
