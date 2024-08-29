@@ -46,10 +46,10 @@ spec:
             periodSeconds: 1
           resources:
             requests:
-              memory: "1Gi"
-              cpu: "500m"
-            limits:
               memory: "2Gi"
+              cpu: "1000m"
+            limits:
+              memory: "3Gi"
               cpu: "2000m"
       volumes: {{ include "misskey.volumes" . | nindent 8 }}
   strategy:
