@@ -34,3 +34,6 @@ misskey:
     - challenges.cloudflare.com
   proxyRemoteFiles: false
   signToActivityPubGet: true
+  deliverJobPerSec: 192
+  inboxJobPerSec: 128
+  relationshipJobPerSec: 128
