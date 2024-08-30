@@ -2,6 +2,13 @@ apiVersion: v1
 entries:
   hariko:
   - apiVersion: v2
+    created: "2024-08-30T15:35:08.645891016Z"
+    digest: b0e708682b146b4667ac64246f6f09907269008be54de88f14658a0cbbb66aeb
+    name: hariko
+    urls:
+    - https://github.com/HanaMisskey/deployment-manager/releases/download/hariko-0.3.212/hariko-0.3.212.tgz
+    version: 0.3.212
+  - apiVersion: v2
     created: "2024-08-30T07:07:57.089133671Z"
     digest: 0ec1d95a9a1eee3ab8e8306faab9b54da4a82d0ca1135eb70fc2aae198e74196
     name: hariko
@@ -395,6 +402,13 @@ entries:
     version: 0.3.143
   misskey:
   - apiVersion: v2
+    created: "2024-08-30T15:35:08.832199511Z"
+    digest: 177972defe0839d33b3c8958c85e66b5d6536f5bed573895258d286f0e4f2f1e
+    name: misskey
+    urls:
+    - https://github.com/HanaMisskey/deployment-manager/releases/download/misskey-0.3.212/misskey-0.3.212.tgz
+    version: 0.3.212
+  - apiVersion: v2
     created: "2024-08-30T07:07:57.265253198Z"
     digest: 6a97855f8559cec060a7ca6856c84354207aea2812331365d7ee8d2a71bea7fe
     name: misskey
@@ -786,4 +800,4 @@ entries:
     urls:
     - https://github.com/HanaMisskey/deployment-manager/releases/download/misskey-0.3.143/misskey-0.3.143.tgz
     version: 0.3.143
-generated: "2024-08-30T07:07:57.265738181Z"
+generated: "2024-08-30T15:35:08.83269542Z"
