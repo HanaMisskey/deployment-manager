@@ -46,7 +46,7 @@ spec:
             periodSeconds: 1
           resources:
             requests:
-              memory: "3Gi"
+              memory: "2500Mi"
               cpu: "2000m"
             limits:
               memory: "4Gi"
@@ -55,5 +55,5 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 30%
-      maxSurge: 3
+      maxUnavailable: 50%
+      maxSurge: 2
