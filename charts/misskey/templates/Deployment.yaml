@@ -5,7 +5,7 @@ metadata:
   labels:
     app: {{ include "misskey.name" . }}
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: {{ include "misskey.name" . }}
@@ -42,15 +42,15 @@ spec:
             httpGet:
               path: /healthz
               port: {{ .Values.port }}
-            failureThreshold: 30
+            failureThreshold: 60
             periodSeconds: 1
           resources:
             requests:
-              memory: "4Gi"
+              memory: "3Gi"
               cpu: "2000m"
             limits:
-              memory: "5Gi"
-              cpu: "4000m"
+              memory: "4Gi"
+              cpu: "3000m"
       volumes: {{ include "misskey.volumes" . | nindent 8 }}
   strategy:
     type: RollingUpdate

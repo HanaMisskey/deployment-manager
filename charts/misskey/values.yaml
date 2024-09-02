@@ -37,4 +37,4 @@ misskey:
   deliverJobPerSec: 192
   inboxJobPerSec: 128
   relationshipJobPerSec: 128
-  clusterLimit: 2
+  clusterLimit: 1
