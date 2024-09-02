@@ -4,7 +4,7 @@ host: misskey.flowers
 port: 3000
 environment: production
 postgresql:
-  host: pg-pooler-production-misskey-rw.default.svc.cluster.local
+  host: production-misskey-pg-rw.default.svc.cluster.local
   port: 5432
   username:
     valueFrom:
