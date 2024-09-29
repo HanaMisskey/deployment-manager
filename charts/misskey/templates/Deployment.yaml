@@ -51,6 +51,8 @@ spec:
             limits:
               memory: "6Gi"
               cpu: "3000m"
+      imagePullSecrets:
+        - name: regcred
       volumes: {{ include "misskey.volumes" . | nindent 8 }}
   strategy:
     type: RollingUpdate

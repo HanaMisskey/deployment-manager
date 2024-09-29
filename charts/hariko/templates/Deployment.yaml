@@ -74,6 +74,8 @@ spec:
           volumeMounts:
             - name: {{ include "hariko.name" . }}-pvc
               mountPath: /root
+      imagePullSecrets:
+        - name: regcred
       volumes:
         - name: {{ include "hariko.name" . }}-pvc
           persistentVolumeClaim:
