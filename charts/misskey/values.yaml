@@ -28,13 +28,17 @@ redis:
 migration:
   bskHost: misskey.backspace.fm
   bskSystemWebhookSecret: hoge
+
+proxy:
+  http://127.0.0.1:3128
+
 misskey:
   id: aidx
   proxyBypassHosts:
     - challenges.cloudflare.com
   proxyRemoteFiles: false
   signToActivityPubGet: true
-  deliverJobPerSec: 192
-  inboxJobPerSec: 128
+  deliverJobPerSec: 256
+  inboxJobPerSec: 256
   relationshipJobPerSec: 128
   clusterLimit: 2
