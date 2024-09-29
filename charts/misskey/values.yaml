@@ -4,7 +4,7 @@ host: misskey.flowers
 port: 3000
 environment: production
 postgresql:
-  host: production-misskey-pg-rw.default.svc.cluster.local
+  host: production-misskey-postgresql-rw.production-misskey-postgresql.svc.cluster.local
   port: 5432
   username:
     valueFrom:
@@ -18,7 +18,7 @@ postgresql:
         key: password
   db: hm1
 redis:
-  host: dragonfly-misskey.default.svc.cluster.local
+  host: production-misskey-dragonflydb.production-misskey-dragonflydb.svc.cluster.local
   port: 6379
   password:
     valueFrom:
