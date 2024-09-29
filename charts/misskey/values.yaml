@@ -29,8 +29,7 @@ migration:
   bskHost: misskey.backspace.fm
   bskSystemWebhookSecret: hoge
 
-proxy:
-  http://127.0.0.1:3128
+proxy: http://127.0.0.1:3128
 
 misskey:
   id: aidx
