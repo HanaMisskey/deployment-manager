@@ -20,4 +20,5 @@
 # Go workspace file
 go.work
 go.work.sum
-.github/.DS_Store
+.DS_Store
+**/.DS_Store
