@@ -15,11 +15,11 @@ misskey-{{- default .Values.host | replace "." "-" -}}
     /usr/bin/yq -i \".redis.pass = \\\"$REDIS_PASS\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".bskSystemWebhookSecret = \\\"$BSK_SECRET\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".proxy = \\\"$PROXY_SECRET\\\"\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i \".meilisearch.host = \\\"$MEILISEARCH_HOST\\\"\" /misskey/.config/default.yml && \
+    /usr/bin/yq -i \".meilisearch.host = $MEILISEARCH_HOST\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".meilisearch.port = $MEILISEARCH_PORT\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i \".meilisearch.apiKey = \\\"$MEILISEARCH_API_KEY\\\"\" /misskey/.config/default.yml && \
+    /usr/bin/yq -i \".meilisearch.apiKey = '$MEILISEARCH_API_KEY'\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".meilisearch.ssl = $MEILISEARCH_SSL\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i \".meilisearch.index = \\\"$MEILISEARCH_INDEX\\\"\" /misskey/.config/default.yml"
+    /usr/bin/yq -i \".meilisearch.index = '$MEILISEARCH_INDEX'\" /misskey/.config/default.yml"
   ]
   env:
     - name: POSTGRESQL_USER
