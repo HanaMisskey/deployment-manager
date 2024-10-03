@@ -14,12 +14,7 @@ misskey-{{- default .Values.host | replace "." "-" -}}
     /usr/bin/yq -i \".db.pass = \\\"$POSTGRESQL_PASS\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".redis.pass = \\\"$REDIS_PASS\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".bskSystemWebhookSecret = \\\"$BSK_SECRET\\\"\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i \".proxy = \\\"$PROXY_SECRET\\\"\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i ".meilisearch.host = \"$MEILISEARCH_HOST\"" /misskey/.config/default.yml && \
-    /usr/bin/yq -i ".meilisearch.port = \"$MEILISEARCH_PORT\"" /misskey/.config/default.yml && \
-    /usr/bin/yq -i ".meilisearch.apiKey = \"$MEILISEARCH_API_KEY\"" /misskey/.config/default.yml && \
-    /usr/bin/yq -i ".meilisearch.ssl = \"$MEILISEARCH_SSL\"" /misskey/.config/default.yml && \
-    /usr/bin/yq -i ".meilisearch.index = \"$MEILISEARCH_INDEX\"" /misskey/.config/default.yml"
+    /usr/bin/yq -i \".proxy = \\\"$PROXY_SECRET\\\"\" /misskey/.config/default.yml"
   ]
   env:
     - name: POSTGRESQL_USER
@@ -47,31 +42,6 @@ misskey-{{- default .Values.host | replace "." "-" -}}
         secretKeyRef:
           name: proxy-secret
           key: secret
-    - name: MEILISEARCH_HOST
-      valueFrom:
-        secretKeyRef:
-          name: meilisearch-secret
-          key: host
-    - name: MEILISEARCH_PORT
-      valueFrom:
-        secretKeyRef:
-          name: meilisearch-secret
-          key: port
-    - name: MEILISEARCH_API_KEY
-      valueFrom:
-        secretKeyRef:
-          name: meilisearch-secret
-          key: apiKey
-    - name: MEILISEARCH_SSL
-      valueFrom:
-        secretKeyRef:
-          name: meilisearch-secret
-          key: ssl
-    - name: MEILISEARCH_INDEX
-      valueFrom:
-        secretKeyRef:
-          name: meilisearch-secret
-          key: index
   volumeMounts:
     - name: {{ include "misskey.name" . }}-configuration-destination
       mountPath: /misskey/.config
