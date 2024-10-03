@@ -25,4 +25,4 @@ data:
     bskHost: {{ .Values.migration.bskHost }}
     bskSystemWebhookSecret: {{ .Values.migration.bskSystemWebhookSecret }}
     meilisearch:
-      host: {{ .Values.meilisearch.scope }}
+      scope: {{ .Values.meilisearch.scope }}
