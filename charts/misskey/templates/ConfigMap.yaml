@@ -24,4 +24,5 @@ data:
       prefix: {{ .Values.host }}
     bskHost: {{ .Values.migration.bskHost }}
     bskSystemWebhookSecret: {{ .Values.migration.bskSystemWebhookSecret }}
-
+    meilisearch:
+      host: {{ .Values.meilisearch.scope }}
