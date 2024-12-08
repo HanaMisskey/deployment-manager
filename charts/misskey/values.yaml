@@ -40,7 +40,7 @@ misskey:
     - challenges.cloudflare.com
   proxyRemoteFiles: false
   signToActivityPubGet: true
-  deliverJobPerSec: 256
-  inboxJobPerSec: 256
-  relationshipJobPerSec: 128
+  deliverJobPerSec: 384
+  inboxJobPerSec: 384
+  relationshipJobPerSec: 256
   clusterLimit: 2
