@@ -34,6 +34,9 @@ proxy: http://127.0.0.1:3128
 meilisearch:
   scope: global
 
+hanamisearch:
+  scope: global
+
 misskey:
   id: aidx
   proxyBypassHosts:

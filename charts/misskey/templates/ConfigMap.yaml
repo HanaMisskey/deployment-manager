@@ -26,3 +26,5 @@ data:
     bskSystemWebhookSecret: {{ .Values.migration.bskSystemWebhookSecret }}
     meilisearch:
       scope: {{ .Values.meilisearch.scope }}
+    hanamisearch:
+      scope: {{ .Values.hanamisearch.scope }}

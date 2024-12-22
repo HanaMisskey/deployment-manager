@@ -19,7 +19,12 @@ misskey-{{- default .Values.host | replace "." "-" -}}
     /usr/bin/yq -i \".meilisearch.port = $MEILISEARCH_PORT\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".meilisearch.apiKey = \\\"$MEILISEARCH_API_KEY\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".meilisearch.ssl = $MEILISEARCH_SSL\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i \".meilisearch.index = \\\"$MEILISEARCH_INDEX\\\"\" /misskey/.config/default.yml"
+    /usr/bin/yq -i \".meilisearch.index = \\\"$HANAMISEARCH_INDEX\\\"\" /misskey/.config/default.yml" && \
+    /usr/bin/yq -i \".hanamisearch.host = \\\"$HANAMISEARCH_HOST\\\"\" /misskey/.config/default.yml && \
+    /usr/bin/yq -i \".hanamisearch.port = $HANAMISEARCH_PORT\" /misskey/.config/default.yml && \
+    /usr/bin/yq -i \".hanamisearch.apiKey = \\\"$HANAMISEARCH_API_KEY\\\"\" /misskey/.config/default.yml && \
+    /usr/bin/yq -i \".hanamisearch.ssl = $HANAMISEARCH_SSL\" /misskey/.config/default.yml && \
+    /usr/bin/yq -i \".hanamisearch.index = \\\"$HANAMISEARCH_INDEX\\\"\" /misskey/.config/default.yml"
   ]
   env:
     - name: POSTGRESQL_USER
@@ -71,6 +76,31 @@ misskey-{{- default .Values.host | replace "." "-" -}}
       valueFrom:
         secretKeyRef:
           name: meilisearch-secret
+          key: index
+    - name: HANAMISEARCH_HOST
+      valueFrom:
+        secretKeyRef:
+          name: hanamisearch-secret
+          key: host
+    - name: HANAMISEARCH_PORT
+      valueFrom:
+        secretKeyRef:
+          name: hanamisearch-secret
+          key: port
+    - name: HANAMISEARCH_API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: hanamisearch-secret
+          key: apiKey
+    - name: HANAMISEARCH_SSL
+      valueFrom:
+        secretKeyRef:
+          name: hanamisearch-secret
+          key: ssl
+    - name: HANAMISEARCH_INDEX
+      valueFrom:
+        secretKeyRef:
+          name: hanamisearch-secret
           key: index
   volumeMounts:
     - name: {{ include "misskey.name" . }}-configuration-destination
