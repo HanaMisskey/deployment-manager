@@ -19,7 +19,7 @@ misskey-{{- default .Values.host | replace "." "-" -}}
     /usr/bin/yq -i \".meilisearch.port = $MEILISEARCH_PORT\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".meilisearch.apiKey = \\\"$MEILISEARCH_API_KEY\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".meilisearch.ssl = $MEILISEARCH_SSL\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i \".meilisearch.index = \\\"$HANAMISEARCH_INDEX\\\"\" /misskey/.config/default.yml" && \
+    /usr/bin/yq -i \".meilisearch.index = \\\"$MEILISEARCH_INDEX\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".hanamisearch.host = \\\"$HANAMISEARCH_HOST\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".hanamisearch.port = $HANAMISEARCH_PORT\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".hanamisearch.apiKey = \\\"$HANAMISEARCH_API_KEY\\\"\" /misskey/.config/default.yml && \
