@@ -41,7 +41,7 @@ misskey:
   id: aidx
   proxyBypassHosts:
     - challenges.cloudflare.com
-  proxyRemoteFiles: false
+  proxyRemoteFiles: true
   signToActivityPubGet: true
   deliverJobPerSec: 512
   inboxJobPerSec: 512
