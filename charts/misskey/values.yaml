@@ -47,3 +47,5 @@ misskey:
   inboxJobPerSec: 512
   relationshipJobPerSec: 512
   clusterLimit: 3
+  fulltextSearch:
+    provider: sqlLike
