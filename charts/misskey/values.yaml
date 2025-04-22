@@ -49,3 +49,6 @@ misskey:
   clusterLimit: 3
   fulltextSearch:
     provider: sqlLike
+
+sentryForBackend:
+  enableNodeProfiling: true

@@ -28,3 +28,5 @@ data:
       scope: {{ .Values.meilisearch.scope }}
     hanamisearch:
       scope: {{ .Values.hanamisearch.scope }}
+    sentryForBackend:
+      enableNodeProfiling: {{ .Values.sentryForBackend.enableNodeProfiling }}
