@@ -25,8 +25,7 @@ misskey-{{- default .Values.host | replace "." "-" -}}
     /usr/bin/yq -i \".hanamisearch.apiKey = \\\"$HANAMISEARCH_API_KEY\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".hanamisearch.ssl = $HANAMISEARCH_SSL\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".hanamisearch.index = \\\"$HANAMISEARCH_INDEX\\\"\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i \".sentryForBackend.options.dsn = \\\"$SENTRY_BACKEND_DSN\\\"\" /misskey/.config/default.yml && \
-    /usr/bin/yq -i \".sentryForFrontend.options.dsn = \\\"$SENTRY_FRONTEND_DSN\\\"\" /misskey/.config/default.yml"
+    /usr/bin/yq -i \".sentryForBackend.options.dsn = \\\"$SENTRY_BACKEND_DSN\\\"\" /misskey/.config/default.yml"
   ]
   env:
     - name: POSTGRESQL_USER
@@ -109,11 +108,6 @@ misskey-{{- default .Values.host | replace "." "-" -}}
         secretKeyRef:
           name: sentry-secret
           key: backendDsn
-    - name: SENTRY_FRONTEND_DSN
-      valueFrom:
-        secretKeyRef:
-          name: sentry-secret
-          key: frontendDsn
   volumeMounts:
     - name: {{ include "misskey.name" . }}-configuration-destination
       mountPath: /misskey/.config
