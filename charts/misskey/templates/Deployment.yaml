@@ -5,7 +5,7 @@ metadata:
   labels:
     app: {{ include "misskey.name" . }}
 spec:
-  replicas: 0
+  replicas: 8
   selector:
     matchLabels:
       app: {{ include "misskey.name" . }}
