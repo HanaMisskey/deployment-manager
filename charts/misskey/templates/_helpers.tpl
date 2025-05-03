@@ -13,6 +13,7 @@ misskey-{{- default .Values.host | replace "." "-" -}}
     /usr/bin/yq -i \".db.user = \\\"$POSTGRESQL_USER\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".db.pass = \\\"$POSTGRESQL_PASS\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".redis.pass = \\\"$REDIS_PASS\\\"\" /misskey/.config/default.yml && \
+    /usr/bin/yq -i \".redisForTimelines.pass = \\\"$REDIS_PASS\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".bskSystemWebhookSecret = \\\"$BSK_SECRET\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".proxy = \\\"$PROXY_SECRET\\\"\" /misskey/.config/default.yml && \
     /usr/bin/yq -i \".meilisearch.host = \\\"$MEILISEARCH_HOST\\\"\" /misskey/.config/default.yml && \

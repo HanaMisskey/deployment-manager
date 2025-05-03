@@ -6,25 +6,17 @@ environment: production
 postgresql:
   host: production-misskey-postgresql-rw.production-misskey-postgresql.svc.cluster.local
   port: 5432
-  username:
-    valueFrom:
-      secretKeyRef:
-        name: postgres-production-user-secret
-        key: username
-  password:
-    valueFrom:
-      secretKeyRef:
-        name: postgres-production-user-secret
-        key: password
+  username: honi
+  password: honi
   db: hm1
 redis:
   host: production-misskey-dragonflydb.production-misskey-dragonflydb.svc.cluster.local
   port: 6379
-  password:
-    valueFrom:
-      secretKeyRef:
-        name: dragonfly-auth
-        key: password
+  password: honi
+redisForTimelines:
+  host: production-misskey-dragonflydb-timeline.production-misskey-dragonflydb.svc.cluster.local
+  port: 6379
+  password: honi
 migration:
   bskHost: misskey.backspace.fm
   bskSystemWebhookSecret: hoge

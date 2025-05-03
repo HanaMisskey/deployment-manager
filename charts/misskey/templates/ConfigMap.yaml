@@ -22,6 +22,12 @@ data:
       family: {{ .Values.redis.family }}
       pass: {{ .Values.redis.password }}
       prefix: {{ .Values.host }}
+    redisForTimelines:
+      host: {{ .Values.redisForTimelines.host }}
+      port: {{ .Values.redisForTimelines.port }}
+      family: {{ .Values.redisForTimelines.family }}
+      pass: {{ .Values.redisForTimelines.password }}
+      prefix: {{ .Values.host }}
     bskHost: {{ .Values.migration.bskHost }}
     bskSystemWebhookSecret: {{ .Values.migration.bskSystemWebhookSecret }}
     meilisearch:
