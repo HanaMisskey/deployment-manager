@@ -25,6 +25,8 @@ spec:
           env:
             - name: NODE_ENV
               value: {{ .Values.environment }}
+            - name: MISSKEY_MIGRATION_CREATE_INDEX_CONCURRENTLY
+              value: 1
           volumeMounts:
             - name: {{ include "misskey.name" . }}-configuration-destination
               mountPath: /misskey/.config
