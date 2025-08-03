@@ -1,3 +1,0 @@
-[submodule "misskey"]
-	path = misskey
-	url = https://github.com/HanaMisskey/misskey.git
