@@ -61,7 +61,7 @@ jobs:
     - if: github.event_name == 'workflow_dispatch'
       run: |
         git pull --ff-only
-        git submodule update
+        git submodule update --init --recursive --depth=0
     - uses: docker/login-action@v3.1.0
       with:
         registry: docker.io
